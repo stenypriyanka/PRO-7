@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioBloom - Responsive Gallery Grid</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f9f4; }
+        h1 { text-align: center; color: #1b4332; }
+        p { text-align: center; color: #1b4332; }
+
+        /* 3-Column Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .gallery-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-card p {
+            padding: 10px;
+            margin: 0;
+            text-align: center;
+            font-weight: bold;
+            color: #2d6a4f;
+        }
+
+        /* Orientation Overlay */
+        .orientation-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(27, 67, 50, 0.92);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            z-index: 1000;
+            font-size: 20px;
+        }
+        @media screen and (max-width: 600px) and (orientation: portrait) {
+            .orientation-overlay { display: flex; }
+        }
+        /* Responsive Text and Gallery */
+    h1 {
+       font-size: clamp(24px, 5vw, 36px);
+    }
+    body {
+    font-size: clamp(14px, 2vw, 18px);
+}
+
+    @media screen and (max-width: 768px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .gallery-card img {
+        height: 180px;
+    }
+}
+
+    @media screen and (max-width: 480px) {
+        .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-card img {
+        height: 200px;
+    }
+} 
+    </style>
+</head>
+<body>
+    <div class="orientation-overlay">
+        📱 Rotate your device to Landscape for the best view of BioBloom's 3-Column Farm Gallery!
+    </div>
+
+    <h1>Bio Bloom </h1>
+    <p>Organic Farming and Bio-based Fertilizers</p>
+
+    <div class="gallery-grid">
+        <div class="gallery-card">
+            <img src="D:\WT\Practicums\PRACTICUM 7\rich soil.jpg" alt="Rich Organic Soil" loading="lazy">
+            <p>Enriched Humus Soil</p>
+        </div>
+        <div class="gallery-card">
+            <img src="D:\WT\Practicums\PRACTICUM 7\Fresh Organic Harvest.jpg" alt="Fresh Organic Harvest" loading="lazy">
+            <p>Chemical-Free Harvest</p>
+        </div>
+        <div class="gallery-card">
+            <img src="D:\WT\Practicums\PRACTICUM 7\Seedling Growth.jpg" alt="Seedling Growth" loading="lazy">
+            <p>Bio-Inoculated Seedlings</p>
+        </div>
+        <div class="gallery-card">
+            <img src="D:\WT\Practicums\PRACTICUM 7\Organic Compost.jpg" alt=" Organic Compost" loading="lazy">
+            <p>Organic Compost</p>
+        </div>
+        <div class="gallery-card">
+            <img src="D:\WT\Practicums\PRACTICUM 7\Green Crops.jpg" alt="Green Crops" loading="lazy">
+            <p> Green Crops </p>
+        </div>
+        <div class="gallery-card">
+            <img src="D:\WT\Practicums\PRACTICUM 7\Greenhouse.jpg" alt="Greenhouse" loading="lazy">
+            <p>Greenhouse</p>
+        </div>
+    </div>
+</body>
+</html>
